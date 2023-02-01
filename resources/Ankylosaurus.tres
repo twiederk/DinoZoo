@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DinoResource" load_steps=4 format=3 uid="uid://ugr5bubxkc6e"]
+
+[ext_resource type="Shape2D" uid="uid://bak6chna0op8t" path="res://resources/AnkylosaurusCollisionShape.tres" id="1_qbs8n"]
+[ext_resource type="Script" path="res://scripts/DinoResource.gd" id="2_1xobt"]
+[ext_resource type="Texture2D" uid="uid://d36c5vlmh5n7h" path="res://assets/Ankylosaurus.png" id="3_vono7"]
+
+[resource]
+script = ExtResource("2_1xobt")
+speed = 20
+texture = ExtResource("3_vono7")
+collision_shape = ExtResource("1_qbs8n")

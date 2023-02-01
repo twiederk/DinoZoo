@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DinoResource" load_steps=4 format=3 uid="uid://bydll63v0cdk8"]
+
+[ext_resource type="Shape2D" uid="uid://cvojsexnntxw1" path="res://resources/SpinosaurusCollisionShape.tres" id="1_jaqgk"]
+[ext_resource type="Script" path="res://scripts/DinoResource.gd" id="2_48vlx"]
+[ext_resource type="Texture2D" uid="uid://77blwi3ryjuq" path="res://assets/Spinosaurus.png" id="3_2wwi6"]
+
+[resource]
+script = ExtResource("2_48vlx")
+speed = 50
+texture = ExtResource("3_2wwi6")
+collision_shape = ExtResource("1_jaqgk")
