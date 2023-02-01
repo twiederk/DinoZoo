@@ -1,16 +1,41 @@
-extends Node
+extends Node2D
 
-var tilemap = null
+const BOTTON_LEFT = 1
+const BOTTON_RIGHT = 2
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	tilemap = $TileMap
-#	tilemap.set_cell(x, y, index)
-#void set_cell(layer: int, coords: Vector2i, source_id: int = -1, atlas_coords: Vector2i = Vector2i(-1, -1), alternative_tile: int = 0)
-	for index in 12:
-		tilemap.set_cell(0, Vector2(index, index), 2, Vector2.ZERO)
+const TILE_GRASS = 1
+const TILE_FENCE = 2
+
+var button_left_pressed : bool = false
+var button_right_pressed : bool = false
+
+@onready var tilemap = $TileMap
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			var map_position = tilemap.local_to_map(event.position)
+			match event.button_index:
+				BOTTON_LEFT:
+					tilemap.set_cell(0, map_position, TILE_FENCE, Vector2.ZERO)
+					button_left_pressed = true
+				BOTTON_RIGHT:
+					tilemap.set_cell(0, map_position, TILE_GRASS, Vector2.ZERO)
+					button_right_pressed = true
+		else:
+			button_left_pressed = false
+			button_right_pressed = false
+	elif event is InputEventMouseMotion:
+		if button_left_pressed:
+			var map_position = tilemap.local_to_map(event.position)
+			tilemap.set_cell(0, map_position, TILE_FENCE, Vector2.ZERO)
+		if button_right_pressed:
+			var map_position = tilemap.local_to_map(event.position)
+			tilemap.set_cell(0, map_position, TILE_GRASS, Vector2.ZERO)
+
+
+
+
