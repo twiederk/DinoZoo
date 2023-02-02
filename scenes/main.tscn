@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkterroxjn4uh"]
+[gd_scene load_steps=5 format=3 uid="uid://dkterroxjn4uh"]
 
 [ext_resource type="TileSet" uid="uid://bw1g2cmwt7c14" path="res://assets/SimpleTileSet.tres" id="1_eeo84"]
 [ext_resource type="Script" path="res://scripts/Main.gd" id="1_l4hw8"]
 [ext_resource type="PackedScene" uid="uid://bjnpvg8tdxssy" path="res://scenes/Dino.tscn" id="2_u0h4g"]
+[ext_resource type="PackedScene" uid="uid://dw52qcb8e53dg" path="res://scenes/Camera.tscn" id="4_hapxx"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_l4hw8")
@@ -47,3 +48,5 @@ position = Vector2(1013, 102)
 
 [node name="Dino12" parent="." instance=ExtResource("2_u0h4g")]
 position = Vector2(1041, 493)
+
+[node name="Camera" parent="." instance=ExtResource("4_hapxx")]
