@@ -1,4 +1,4 @@
-[gd_resource type="RectangleShape2D" format=3 uid="uid://cvojsexnntxw1"]
+[gd_resource type="CapsuleShape2D" format=3 uid="uid://bhqn1issybc27"]
 
 [resource]
-size = Vector2(170, 100)
+height = 52.0

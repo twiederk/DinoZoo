@@ -17,6 +17,7 @@ var direction = [
 	]
 
 @onready var sprite = $Sprite
+@onready var shadow_sprite = $ShadowSprite
 @onready var collision_shape = $CollisionShape2D
 
 
@@ -24,6 +25,8 @@ func _ready():
 	randomize()
 	var dino = dinos[randi() % dinos.size()]
 	speed = dino.speed
+	shadow_sprite.texture = dino.shadow
+	sprite.position = dino.center
 	sprite.texture = dino.texture
 	collision_shape.shape = dino.collision_shape
 	velocity = direction[randi() % direction.size()] * speed

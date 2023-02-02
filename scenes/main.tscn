@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dw52qcb8e53dg" path="res://scenes/Camera.tscn" id="4_hapxx"]
 
 [node name="Main" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_l4hw8")
 
 [node name="TileMap" type="TileMap" parent="."]
