@@ -3,11 +3,7 @@ extends CharacterBody2D
 
 var speed: int = 30
 
-var dinos = [
-	preload("res://resources/Ankylosaurus.tres"),
-	preload("res://resources/Brontosaurus.tres"),
-	preload("res://resources/Spinosaurus.tres"),
-	]
+@export var dino: DinoResource
 
 var direction = [
 	Vector2(1, 0),
@@ -23,7 +19,6 @@ var direction = [
 
 func _ready():
 	randomize()
-	var dino = dinos[randi() % dinos.size()]
 	speed = dino.speed
 	shadow_sprite.texture = dino.shadow
 	sprite.position = dino.center

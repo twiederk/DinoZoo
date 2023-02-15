@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("2_1xobt")
-center = Vector2(7, -12)
+center = Vector2(0, -3)
 speed = 20
 texture = ExtResource("3_vono7")
 shadow = ExtResource("3_iq27n")

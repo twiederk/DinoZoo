@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjnpvg8tdxssy"]
 
 [ext_resource type="Script" path="res://scripts/Dino.gd" id="1_763so"]
-[ext_resource type="Texture2D" uid="uid://77blwi3ryjuq" path="res://assets/Spinosaurus.png" id="2_s7sys"]
+[ext_resource type="Texture2D" uid="uid://77blwi3ryjuq" path="res://assets/Spinosaurus.png" id="2_aitm0"]
 [ext_resource type="Shape2D" uid="uid://bhqn1issybc27" path="res://resources/SpinosaurusCollisionShape.tres" id="3_a2cw7"]
 
 [node name="Dino" type="CharacterBody2D"]
@@ -10,8 +10,8 @@ script = ExtResource("1_763so")
 [node name="ShadowSprite" type="Sprite2D" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, -50)
-texture = ExtResource("2_s7sys")
+position = Vector2(0, -3)
+texture = ExtResource("2_aitm0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

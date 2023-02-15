@@ -1,8 +1,8 @@
 class_name Camera
 extends Camera2D
 
-const ZOOM_MIN: Vector2 = Vector2(0.5, 0.5)
-const ZOOM_MAX: Vector2 = Vector2(5.0, 5.0)
+const ZOOM_MIN: Vector2 = Vector2(0.1, 0.1)
+const ZOOM_MAX: Vector2 = Vector2(2.0, 2.0)
 const ZOOM_STEP: Vector2 = Vector2(0.1, 0.1)
 
 @export var speed: int = 10
@@ -26,5 +26,6 @@ func zoom(scale: Vector2) -> void:
 	var zoom = get_zoom()
 	zoom += scale
 	zoom = clamp(zoom, ZOOM_MIN, ZOOM_MAX)
+	print(str("Zoom: ", zoom))
 	set_zoom(zoom)
 
