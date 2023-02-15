@@ -1,8 +1,33 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjnpvg8tdxssy"]
+[gd_scene load_steps=9 format=3 uid="uid://bjnpvg8tdxssy"]
 
 [ext_resource type="Script" path="res://scripts/Dino.gd" id="1_763so"]
 [ext_resource type="Texture2D" uid="uid://77blwi3ryjuq" path="res://assets/Spinosaurus.png" id="2_aitm0"]
 [ext_resource type="Shape2D" uid="uid://bhqn1issybc27" path="res://resources/SpinosaurusCollisionShape.tres" id="3_a2cw7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iohjx"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cials"]
+bg_color = Color(0, 1, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="Theme" id="Theme_lpabl"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_iohjx")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_cials")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7dhy4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ecg5"]
+radius = 13.0
 
 [node name="Dino" type="CharacterBody2D"]
 script = ExtResource("1_763so")
@@ -16,3 +41,32 @@ texture = ExtResource("2_aitm0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = ExtResource("3_a2cw7")
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = -21.0
+offset_top = -27.0
+offset_right = 17.0
+offset_bottom = -23.0
+theme = SubResource("Theme_lpabl")
+value = 50.0
+show_percentage = false
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-23, -14)
+shape = SubResource("CircleShape2D_7dhy4")
+debug_color = Color(0.811765, 0.0666667, 0.0784314, 0.647059)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_7ecg5")
+debug_color = Color(0.866667, 0.376471, 0, 0.419608)
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

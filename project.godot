@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="DinoZoo"
-config/description="0.8.0"
+config/description="0.9.0-SNAPSHOT"
 run/main_scene="res://scenes/Main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
@@ -60,3 +60,5 @@ zoom_out={
 [layer_names]
 
 2d_physics/layer_1="World"
+2d_physics/layer_2="Hitbox"
+2d_physics/layer_3="Hurtbox"
