@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjnpvg8tdxssy"]
+[gd_scene load_steps=10 format=3 uid="uid://lmijkyq8x042"]
 
-[ext_resource type="Script" path="res://scripts/Dino.gd" id="1_763so"]
+[ext_resource type="Script" path="res://dinos/Dino.gd" id="1_0twn2"]
 [ext_resource type="Texture2D" uid="uid://77blwi3ryjuq" path="res://assets/Spinosaurus.png" id="2_aitm0"]
+[ext_resource type="PackedScene" uid="uid://bne2fytx70yhb" path="res://scenes/DetectionZone.tscn" id="3_hje0i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3cvj5"]
 height = 22.0
@@ -33,7 +34,7 @@ radius = 14.0
 radius = 17.0
 
 [node name="Dino" type="CharacterBody2D"]
-script = ExtResource("1_763so")
+script = ExtResource("1_0twn2")
 
 [node name="ShadowSprite" type="Sprite2D" parent="."]
 
@@ -53,6 +54,9 @@ offset_bottom = -23.0
 theme = SubResource("Theme_lpabl")
 value = 50.0
 show_percentage = false
+
+[node name="FoodDetectionZone" parent="." instance=ExtResource("3_hje0i")]
+collision_mask = 2
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 4

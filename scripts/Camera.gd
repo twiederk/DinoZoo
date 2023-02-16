@@ -7,7 +7,7 @@ const ZOOM_STEP: Vector2 = Vector2(0.1, 0.1)
 
 @export var speed: int = 10
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("up"):
 		position += Vector2(0, -speed)
 	if Input.is_action_pressed("down"):

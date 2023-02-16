@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqi77jnnwyrr3"]
+[gd_scene load_steps=8 format=3 uid="uid://6iyggg2grqjd"]
 
-[ext_resource type="PackedScene" uid="uid://bjnpvg8tdxssy" path="res://scenes/Dino.tscn" id="1_e6700"]
-[ext_resource type="Texture2D" uid="uid://tjw55uv23545" path="res://assets/Brontosaurus.png" id="2_2tgax"]
-[ext_resource type="Texture2D" uid="uid://cpsphdr6v0gpo" path="res://assets/shadows/LargeShadow.png" id="2_af0fg"]
+[ext_resource type="PackedScene" uid="uid://lmijkyq8x042" path="res://dinos/Dino.tscn" id="1_hq70a"]
+[ext_resource type="Resource" path="res://dinos/Brontosaurus.tres" id="2_drf57"]
+[ext_resource type="Texture2D" uid="uid://cpsphdr6v0gpo" path="res://assets/shadows/LargeShadow.png" id="3_221cm"]
+[ext_resource type="Texture2D" uid="uid://tjw55uv23545" path="res://assets/Brontosaurus.png" id="4_n71ml"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ojwhy"]
 radius = 13.0
@@ -14,14 +15,15 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_0iuvl"]
 radius = 17.0294
 
-[node name="Brontosaurus" instance=ExtResource("1_e6700")]
+[node name="Brontosaurus" instance=ExtResource("1_hq70a")]
+dino = ExtResource("2_drf57")
 
 [node name="ShadowSprite" parent="." index="0"]
 position = Vector2(-11, 13)
-texture = ExtResource("2_af0fg")
+texture = ExtResource("3_221cm")
 
 [node name="Sprite" parent="." index="1"]
-texture = ExtResource("2_2tgax")
+texture = ExtResource("4_n71ml")
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-9, 0)

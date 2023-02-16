@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="DinoZoo"
-config/description="0.10.0"
-run/main_scene="res://scenes/Level_001.tscn"
+config/description="0.11.0-SNAPSHOT"
+run/main_scene="res://levels/Level_001.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -64,5 +64,9 @@ zoom_out={
 [layer_names]
 
 2d_physics/layer_1="World"
-2d_physics/layer_2="Hitbox"
-2d_physics/layer_3="Hurtbox"
+2d_physics/layer_2="Plant"
+2d_physics/layer_3="Hitbox"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="DinoResource" load_steps=2 format=3 uid="uid://nh0j561222eu"]
-
-[ext_resource type="Script" path="res://scripts/DinoResource.gd" id="2_1xobt"]
-
-[resource]
-script = ExtResource("2_1xobt")
-speed = 20
-max_health = 20

@@ -1,18 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://64oc23eh5ggq"]
+[gd_scene load_steps=9 format=3 uid="uid://bu10d7o75l1v3"]
 
-[ext_resource type="PackedScene" uid="uid://bjnpvg8tdxssy" path="res://scenes/Dino.tscn" id="1_l0dkt"]
-[ext_resource type="Texture2D" uid="uid://d36c5vlmh5n7h" path="res://assets/Ankylosaurus.png" id="2_inxfn"]
-[ext_resource type="Script" path="res://scripts/DinoResource.gd" id="2_r3535"]
-[ext_resource type="Texture2D" uid="uid://xfo8nc8ksn83" path="res://assets/shadows/SmallShadow.png" id="3_07prc"]
-
-[sub_resource type="Resource" id="Resource_fj63l"]
-script = ExtResource("2_r3535")
-speed = 20
-max_health = 20
+[ext_resource type="PackedScene" uid="uid://lmijkyq8x042" path="res://dinos/Dino.tscn" id="1_xcptu"]
+[ext_resource type="Resource" path="res://dinos/Ankylosaurus.tres" id="2_05tj3"]
+[ext_resource type="Texture2D" uid="uid://xfo8nc8ksn83" path="res://assets/shadows/SmallShadow.png" id="3_416tp"]
+[ext_resource type="Texture2D" uid="uid://d36c5vlmh5n7h" path="res://assets/Ankylosaurus.png" id="4_ecca8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s1cqv"]
 radius = 1.0
 height = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1wt13"]
+radius = 157.029
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ito0"]
 radius = 2.0
@@ -20,15 +18,15 @@ radius = 2.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6piph"]
 radius = 4.0
 
-[node name="Ankylosaurus" instance=ExtResource("1_l0dkt")]
-dino = SubResource("Resource_fj63l")
+[node name="Ankylosaurus" instance=ExtResource("1_xcptu")]
+dino = ExtResource("2_05tj3")
 
 [node name="ShadowSprite" parent="." index="0"]
 position = Vector2(-1, 1)
-texture = ExtResource("3_07prc")
+texture = ExtResource("3_416tp")
 
 [node name="Sprite" parent="." index="1"]
-texture = ExtResource("2_inxfn")
+texture = ExtResource("4_ecca8")
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-2, -1)
@@ -40,6 +38,9 @@ offset_top = -13.0
 offset_right = 19.0
 offset_bottom = -9.0
 
+[node name="CollisionShape2D" parent="FoodDetectionZone" index="0"]
+shape = SubResource("CircleShape2D_1wt13")
+
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(-8, -4)
 shape = SubResource("CircleShape2D_2ito0")
@@ -47,3 +48,5 @@ shape = SubResource("CircleShape2D_2ito0")
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(-1, -3)
 shape = SubResource("CircleShape2D_6piph")
+
+[editable path="FoodDetectionZone"]

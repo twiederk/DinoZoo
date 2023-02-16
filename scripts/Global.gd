@@ -14,6 +14,6 @@ func _on_level_completed(level_name: String) -> void:
 func _get_level_resource(level_name: String) -> String:
 	var level_resource
 	match level_name:
-		"001": level_resource = "res://scenes/Level_002.tscn"
-		"002": level_resource = "res://scenes/Level_001.tscn"
+		"001": level_resource = "res://levels/Level_002.tscn"
+		"002": level_resource = "res://levels/Level_001.tscn"
 	return level_resource

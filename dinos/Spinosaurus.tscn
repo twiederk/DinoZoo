@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://djho50qia7x5x"]
+[gd_scene load_steps=7 format=3 uid="uid://d1bc5mcccta50"]
 
-[ext_resource type="PackedScene" uid="uid://bjnpvg8tdxssy" path="res://scenes/Dino.tscn" id="1_i1051"]
-[ext_resource type="Texture2D" uid="uid://cpsphdr6v0gpo" path="res://assets/shadows/LargeShadow.png" id="2_yjih3"]
+[ext_resource type="PackedScene" uid="uid://lmijkyq8x042" path="res://dinos/Dino.tscn" id="1_56v8o"]
+[ext_resource type="Resource" path="res://dinos/Spinosaurus.tres" id="2_3cu3h"]
+[ext_resource type="Texture2D" uid="uid://cpsphdr6v0gpo" path="res://assets/shadows/LargeShadow.png" id="3_7gayj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilc1i"]
 radius = 13.0
@@ -11,11 +12,12 @@ radius = 13.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_rmmf2"]
 radius = 16.0
 
-[node name="Spinosaurus" instance=ExtResource("1_i1051")]
+[node name="Spinosaurus" instance=ExtResource("1_56v8o")]
+dino = ExtResource("2_3cu3h")
 
 [node name="ShadowSprite" parent="." index="0"]
 position = Vector2(-1, 12)
-texture = ExtResource("2_yjih3")
+texture = ExtResource("3_7gayj")
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(-1, -4)

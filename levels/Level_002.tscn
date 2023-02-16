@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4mlk8hlvsumt"]
+[gd_scene load_steps=11 format=3]
 
-[ext_resource type="Script" path="res://scripts/Level.gd" id="1_l4hw8"]
+[ext_resource type="Script" path="res://levels/Level.gd" id="1_l4hw8"]
 [ext_resource type="TileSet" uid="uid://51hady3mv4ss" path="res://assets/IslandTileSet.tres" id="3_v2iyn"]
 [ext_resource type="PackedScene" uid="uid://dw52qcb8e53dg" path="res://scenes/Camera.tscn" id="4_hapxx"]
-[ext_resource type="PackedScene" uid="uid://64oc23eh5ggq" path="res://scenes/Ankylosaurus.tscn" id="4_ohhxb"]
-[ext_resource type="PackedScene" uid="uid://dqi77jnnwyrr3" path="res://scenes/Brontosaurus.tscn" id="5_p7tau"]
-[ext_resource type="PackedScene" uid="uid://djho50qia7x5x" path="res://scenes/Spinosaurus.tscn" id="6_fghdv"]
-[ext_resource type="Script" path="res://scripts/DinoResource.gd" id="6_orefo"]
+[ext_resource type="PackedScene" uid="uid://bu10d7o75l1v3" path="res://dinos/Ankylosaurus.tscn" id="4_ohhxb"]
+[ext_resource type="PackedScene" uid="uid://6iyggg2grqjd" path="res://dinos/Brontosaurus.tscn" id="5_p7tau"]
+[ext_resource type="PackedScene" uid="uid://d1bc5mcccta50" path="res://dinos/Spinosaurus.tscn" id="6_fghdv"]
+[ext_resource type="Script" path="res://dinos/DinoResource.gd" id="6_orefo"]
 [ext_resource type="PackedScene" uid="uid://bffv1ox2r6s25" path="res://scenes/GUI.tscn" id="8_p6lbq"]
 
 [sub_resource type="Resource" id="Resource_k2lme"]
