@@ -1,14 +1,8 @@
-[gd_resource type="Resource" script_class="DinoResource" load_steps=5 format=3 uid="uid://bbhf68ln3h5sx"]
+[gd_resource type="Resource" script_class="DinoResource" load_steps=2 format=3 uid="uid://bbhf68ln3h5sx"]
 
-[ext_resource type="Shape2D" uid="uid://bhqn1issybc27" path="res://resources/SpinosaurusCollisionShape.tres" id="1_jaqgk"]
 [ext_resource type="Script" path="res://scripts/DinoResource.gd" id="2_48vlx"]
-[ext_resource type="Texture2D" uid="uid://77blwi3ryjuq" path="res://assets/Spinosaurus.png" id="3_2wwi6"]
-[ext_resource type="Texture2D" uid="uid://cpsphdr6v0gpo" path="res://assets/shadows/LargeShadow.png" id="3_i8y00"]
 
 [resource]
 script = ExtResource("2_48vlx")
-center = Vector2(0, -16)
 speed = 50
-texture = ExtResource("3_2wwi6")
-shadow = ExtResource("3_i8y00")
-collision_shape = ExtResource("1_jaqgk")
+max_health = 20

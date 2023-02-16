@@ -26,6 +26,5 @@ func zoom(scale: Vector2) -> void:
 	var zoom = get_zoom()
 	zoom += scale
 	zoom = clamp(zoom, ZOOM_MIN, ZOOM_MAX)
-	print(str("Zoom: ", zoom))
 	set_zoom(zoom)
 

@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://djho50qia7x5x"]
+
+[ext_resource type="PackedScene" uid="uid://bjnpvg8tdxssy" path="res://scenes/Dino.tscn" id="1_i1051"]
+[ext_resource type="Texture2D" uid="uid://cpsphdr6v0gpo" path="res://assets/shadows/LargeShadow.png" id="2_yjih3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ilc1i"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0ydi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rmmf2"]
+radius = 16.0
+
+[node name="Spinosaurus" instance=ExtResource("1_i1051")]
+
+[node name="ShadowSprite" parent="." index="0"]
+position = Vector2(-1, 12)
+texture = ExtResource("2_yjih3")
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(-1, -4)
+rotation = 0.0
+shape = SubResource("CapsuleShape2D_ilc1i")
+
+[node name="HealthBar" parent="." index="3"]
+offset_left = -19.0
+offset_top = -28.0
+offset_right = 19.0
+offset_bottom = -24.0
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(-24, -18)
+shape = SubResource("CircleShape2D_m0ydi")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_rmmf2")

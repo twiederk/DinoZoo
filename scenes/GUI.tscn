@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://bffv1ox2r6s25"]
+
+[ext_resource type="Script" path="res://scenes/GUI.gd" id="1_r8t3y"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_r8t3y")
+
+[node name="NextLevel" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Next Level"
+
+[connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]

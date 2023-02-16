@@ -9,12 +9,18 @@ const TILE_SET_SOURCE_ID = 1
 const TILE_GRASS = Vector2(1, 7)
 const TILE_FENCE = Vector2(1, 12)
 
+@export var level_name: String
+
 var button_left_pressed : bool = false
 var button_right_pressed : bool = false
 
 @onready var tilemap = $IslandTileMap
 @onready var camera = $Camera
+@onready var gui = $GUI
 
+func _ready():
+	gui.level_name = level_name
+	
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -37,5 +43,3 @@ func _input(event):
 		if button_right_pressed:
 			var map_position = tilemap.local_to_map(get_global_mouse_position())
 			tilemap.set_cell(TILE_SET_LAYER_GROUND, map_position, TILE_SET_SOURCE_ID, TILE_GRASS)
-
-

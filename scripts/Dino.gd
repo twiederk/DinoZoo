@@ -23,12 +23,8 @@ func _ready():
 	randomize()
 	speed = dino.speed
 	health = dino.max_health
-	shadow_sprite.texture = dino.shadow
-	sprite.position = dino.center
-	sprite.texture = dino.texture
 	health_bar.max_value = dino.max_health
 	health_bar.value = dino.max_health
-	collision_shape.shape = dino.collision_shape
 	velocity = direction[randi() % direction.size()] * speed
 
 
